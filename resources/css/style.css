@@ -24,6 +24,26 @@ header img {
   padding-right: 1rem;
 }
 
+@media only screen and (max-width: 470px) {
+  .banner {
+    height: 15rem;
+  }
+
+  .text-content {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 10rem;
+  }
+
+  .text-content h4 {
+    font-size: 0.77rem;
+  }
+
+  .text-content h1{
+    font-size: 1rem;
+  }
+}
+
 .banner {
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg");
   background-repeat: no-repeat;
@@ -50,39 +70,106 @@ nav {
   background-color: firebrick;
 }
 
-nav ul {
+nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 0;
 }
 
-.products {
+nav .mobile-nav {
+  display: none;
+}
+
+.products, .information {
   display: flex;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .item {
+    width: 47%;
+  }
+
+  .item.glasses {
+    display: none;
+  }
+
+  .info {
+    width: 35%;
+  }
+
+  nav .container {
+    display: none;
+  }
+
+  nav .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .products, .information {
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    width: 90%;
+    margin: auto;
+  }
+
+  .item.watch {
+    display: none;
+  }
+
+  .info {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
 }
 
 .item {
-  display: inline-block;
-  border: 4px solid black;
+  width: 30%;
 }
 
 .item-image {
-  width: 30%;
-  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  height: 9rem;
+  padding: 2rem 0;
 }
 
 .item-image img {
-  max-width: 100%;
-  height: 9rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  max-width: 8rem;
 }
 
-.item p {
+.description {
+  display: block;
   background-color: black;
-  max-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.info {
+  width: 35%;
+}
+
+.info .title {
+  display: block;
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+.info .info-content {
+  color: black;
+}
+
+footer {
+  background-color: black;
+  margin-top: 4rem;
+  padding: 2.5rem 0;
 }
